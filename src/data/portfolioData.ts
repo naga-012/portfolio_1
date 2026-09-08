@@ -193,7 +193,9 @@ export const portfolioData: PortfolioData = {
       image: '/projects/mensverse-3d.jpg',
       links: {
         github: 'https://github.com/naga-012/mensverse-3d-store',
-        live: 'https://mensverse-3d.demo.app',
+        live: 'https://saha-customer-site.onrender.com',
+        customerLive: 'https://saha-customer-site.onrender.com',
+        adminLive: 'https://saha-admin-site.onrender.com',
       },
     },
     {

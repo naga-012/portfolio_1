@@ -44,6 +44,8 @@ export interface ProjectItem {
     demo?: string;
     patientLive?: string;
     doctorLive?: string;
+    customerLive?: string;
+    adminLive?: string;
   };
   image?: string;
   featured: boolean;

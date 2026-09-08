@@ -271,6 +271,27 @@ export const Accessible2DView: React.FC = () => {
                   </div>
                 )}
 
+                {proj.links.customerLive && proj.links.adminLive && (
+                  <div className="flex items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href={proj.links.customerLive}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2.5 py-1 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-purple-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                    >
+                      Customer Store <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                    <a
+                      href={proj.links.adminLive}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-750 border border-slate-700 text-slate-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                    >
+                      Admin Portal <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs font-mono">
                   <span className="text-cyan-400 flex items-center gap-1 group-hover:underline">
                     Inspect Full Case Study <ChevronRight className="w-3.5 h-3.5" />
