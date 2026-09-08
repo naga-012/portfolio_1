@@ -9,7 +9,19 @@ import { ProjectsZone } from './zones/ProjectsZone';
 import { ExperienceZone } from './zones/ExperienceZone';
 import { ContactZone } from './zones/ContactZone';
 
+import { usePortfolioStore } from '../../store/usePortfolioStore';
+import { ZoneId } from '../../types/portfolio';
+
 export const PortfolioCanvas: React.FC = () => {
+  const currentZone = usePortfolioStore((state) => state.currentZone);
+  const previousZone = usePortfolioStore((state) => state.previousZone);
+  const isTransitioning = usePortfolioStore((state) => state.isTransitioning);
+
+  // Mount only active zone and previous zone during transitions
+  const shouldRender = (zone: ZoneId) => {
+    return currentZone === zone || (isTransitioning && previousZone === zone);
+  };
+
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-auto bg-[#030712]">
       <Canvas
@@ -34,13 +46,13 @@ export const PortfolioCanvas: React.FC = () => {
           <CameraRig />
           <DataParticles />
 
-          {/* 6 Spatial Zones */}
-          <HeroZone />
-          <AboutZone />
-          <SkillsZone />
-          <ProjectsZone />
-          <ExperienceZone />
-          <ContactZone />
+          {/* 6 Spatial Zones - Conditionally mounted to prevent DOM/UI bleeding between zones */}
+          {shouldRender('hero') && <HeroZone />}
+          {shouldRender('about') && <AboutZone />}
+          {shouldRender('skills') && <SkillsZone />}
+          {shouldRender('projects') && <ProjectsZone />}
+          {shouldRender('experience') && <ExperienceZone />}
+          {shouldRender('contact') && <ContactZone />}
         </Suspense>
       </Canvas>
     </div>

@@ -22,7 +22,7 @@ export const ProjectsZone: React.FC = () => {
   };
 
   return (
-    <group position={[16, 0, 0]}>
+    <group position={[28, 0, 0]}>
       {/* Section Header floating cleanly above the cards */}
       <Float speed={1.2} rotationIntensity={0.05} floatIntensity={0.15}>
         <Html position={[0, 3.8, 0]} center transform distanceFactor={9} className="pointer-events-none select-none w-[480px]">
