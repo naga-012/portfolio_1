@@ -9,7 +9,11 @@ import {
   Layers,
   Sparkles,
   Compass,
-  Code2
+  Code2,
+  Linkedin,
+  Github,
+  Mail,
+  Phone
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -80,6 +84,42 @@ export const Navbar: React.FC = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
+          {/* Quick Social & Contact Icons */}
+          <div className="hidden lg:flex items-center gap-1 px-2 py-1 rounded-xl bg-slate-900/60 border border-slate-800 backdrop-blur-md">
+            <a
+              href={portfolioData.identity.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              title="LinkedIn Profile"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-[#00A0DC] hover:bg-[#0077B5]/20 transition-all"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={portfolioData.identity.github}
+              target="_blank"
+              rel="noreferrer"
+              title="GitHub Codebase"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
+            >
+              <Github className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={`mailto:${portfolioData.identity.email}`}
+              title={`Email: ${portfolioData.identity.email}`}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-rose-500/20 transition-all"
+            >
+              <Mail className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={`tel:${portfolioData.identity.phone}`}
+              title={`Phone: ${portfolioData.identity.phone}`}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+            >
+              <Phone className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
           {/* 3D / 2D Toggle */}
           <button
             onClick={toggle3DMode}

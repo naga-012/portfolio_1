@@ -75,40 +75,69 @@ export const Accessible2DView: React.FC = () => {
           </button>
         </div>
 
-        {/* Start Contact Bar: LinkedIn, GitHub, Gmail, Phone */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
-          <a
-            href={portfolioData.identity.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-[#0077B5]/20 border border-slate-700 hover:border-[#0077B5] text-slate-200 hover:text-[#00A0DC] text-xs font-mono transition-all"
-          >
-            <Linkedin className="w-3.5 h-3.5 text-[#00A0DC]" />
-            <span>LinkedIn</span>
-          </a>
-          <a
-            href={portfolioData.identity.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white text-xs font-mono transition-all"
-          >
-            <Github className="w-3.5 h-3.5" />
-            <span>GitHub</span>
-          </a>
-          <a
-            href={`mailto:${portfolioData.identity.email}`}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/60 text-slate-200 hover:text-rose-300 text-xs font-mono transition-all"
-          >
-            <Mail className="w-3.5 h-3.5 text-rose-400" />
-            <span>{portfolioData.identity.email}</span>
-          </a>
-          <a
-            href={`tel:${portfolioData.identity.phone}`}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-emerald-500/20 border border-slate-700 hover:border-emerald-500/60 text-slate-200 hover:text-emerald-300 text-xs font-mono transition-all"
-          >
-            <Phone className="w-3.5 h-3.5 text-emerald-400" />
-            <span>{portfolioData.identity.phone}</span>
-          </a>
+        {/* START Contact Channels: LinkedIn, GitHub, Gmail, Phone */}
+        <div className="pt-4 max-w-4xl mx-auto w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-left">
+            {/* LinkedIn */}
+            <a
+              href={portfolioData.identity.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="p-3.5 rounded-2xl bg-slate-900/95 hover:bg-[#0077B5]/20 border border-slate-800 hover:border-[#0077B5] flex items-center gap-3 transition-all group shadow-md"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#0077B5]/20 flex items-center justify-center text-[#00A0DC] shrink-0">
+                <Linkedin className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">LinkedIn</div>
+                <div className="text-xs font-bold text-white group-hover:text-[#00A0DC] truncate">nagarjun-myakala-</div>
+              </div>
+            </a>
+
+            {/* GitHub */}
+            <a
+              href={portfolioData.identity.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-3.5 rounded-2xl bg-slate-900/95 hover:bg-slate-800 border border-slate-800 hover:border-slate-600 flex items-center gap-3 transition-all group shadow-md"
+            >
+              <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-200 shrink-0">
+                <Github className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">GitHub</div>
+                <div className="text-xs font-bold text-white group-hover:text-cyan-300 truncate">naga-012</div>
+              </div>
+            </a>
+
+            {/* Gmail */}
+            <a
+              href={`mailto:${portfolioData.identity.email}`}
+              className="p-3.5 rounded-2xl bg-slate-900/95 hover:bg-rose-500/20 border border-slate-800 hover:border-rose-500/60 flex items-center gap-3 transition-all group shadow-md"
+            >
+              <div className="w-10 h-10 rounded-xl bg-rose-500/15 flex items-center justify-center text-rose-400 shrink-0">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Gmail Direct</div>
+                <div className="text-xs font-bold text-white group-hover:text-rose-300 truncate">{portfolioData.identity.email}</div>
+              </div>
+            </a>
+
+            {/* Phone */}
+            <a
+              href={`tel:${portfolioData.identity.phone}`}
+              className="p-3.5 rounded-2xl bg-slate-900/95 hover:bg-emerald-500/20 border border-slate-800 hover:border-emerald-500/60 flex items-center gap-3 transition-all group shadow-md"
+            >
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-400 shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Phone / Call</div>
+                <div className="text-xs font-bold text-white group-hover:text-emerald-300 truncate">{portfolioData.identity.phone}</div>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -501,6 +530,104 @@ export const Accessible2DView: React.FC = () => {
           </button>
         </div>
       </section>
+
+      {/* 2D Mode Persistent Footer */}
+      <footer className="border-t border-slate-800/80 pt-10 pb-20 text-center space-y-6">
+        <div className="flex items-center justify-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-slate-900 border border-cyan-500/40 flex items-center justify-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-purple-400 text-sm">
+            NM
+          </div>
+          <span className="text-sm font-bold text-white">{portfolioData.identity.name}</span>
+          <span className="text-slate-600">•</span>
+          <span className="text-xs font-mono text-cyan-400">{portfolioData.identity.title}</span>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
+          <a
+            href={portfolioData.identity.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-slate-300 hover:text-[#00A0DC] transition-colors"
+          >
+            <Linkedin className="w-4 h-4 text-[#00A0DC]" /> LinkedIn
+          </a>
+          <span className="text-slate-700">•</span>
+          <a
+            href={portfolioData.identity.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+          >
+            <Github className="w-4 h-4" /> GitHub
+          </a>
+          <span className="text-slate-700">•</span>
+          <a
+            href={`mailto:${portfolioData.identity.email}`}
+            className="flex items-center gap-1.5 text-slate-300 hover:text-rose-400 transition-colors"
+          >
+            <Mail className="w-4 h-4 text-rose-400" /> {portfolioData.identity.email}
+          </a>
+          <span className="text-slate-700">•</span>
+          <a
+            href={`tel:${portfolioData.identity.phone}`}
+            className="flex items-center gap-1.5 text-slate-300 hover:text-emerald-400 transition-colors"
+          >
+            <Phone className="w-4 h-4 text-emerald-400" /> {portfolioData.identity.phone}
+          </a>
+        </div>
+
+        <p className="text-[11px] font-mono text-slate-500">
+          © {new Date().getFullYear()} Nagarjun Myakala. Hyderabad, Telangana, India. All rights reserved.
+        </p>
+      </footer>
+
+      {/* 2D Mode Floating Quick Connect Dock */}
+      {!is3DMode && (
+        <aside
+          aria-label="Quick contact channels"
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/95 border border-cyan-500/40 backdrop-blur-2xl shadow-2xl pointer-events-auto select-none"
+        >
+          <a
+            href={portfolioData.identity.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            title="LinkedIn Profile"
+            className="p-2 rounded-full bg-slate-900/90 text-[#00A0DC] hover:bg-[#0077B5]/30 transition-all hover:scale-110"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href={portfolioData.identity.github}
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub Codebase"
+            className="p-2 rounded-full bg-slate-900/90 text-white hover:bg-slate-800 transition-all hover:scale-110"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+          <a
+            href={`mailto:${portfolioData.identity.email}`}
+            title={`Email: ${portfolioData.identity.email}`}
+            className="p-2 rounded-full bg-slate-900/90 text-rose-400 hover:bg-rose-500/30 transition-all hover:scale-110"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
+          <a
+            href={`tel:${portfolioData.identity.phone}`}
+            title={`Call / WhatsApp: ${portfolioData.identity.phone}`}
+            className="p-2 rounded-full bg-slate-900/90 text-emerald-400 hover:bg-emerald-500/30 transition-all hover:scale-110"
+          >
+            <Phone className="w-4 h-4" />
+          </a>
+          <div className="h-4 w-px bg-slate-800 mx-1" />
+          <button
+            onClick={() => setContactModalOpen(true)}
+            className="px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-xs font-mono hover:from-cyan-400 hover:to-blue-500 transition-all"
+          >
+            Connect
+          </button>
+        </aside>
+      )}
     </div>
   );
 };
