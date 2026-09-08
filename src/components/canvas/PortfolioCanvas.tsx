@@ -1,0 +1,48 @@
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { CameraRig } from './CameraRig';
+import { DataParticles } from './DataParticles';
+import { HeroZone } from './zones/HeroZone';
+import { AboutZone } from './zones/AboutZone';
+import { SkillsZone } from './zones/SkillsZone';
+import { ProjectsZone } from './zones/ProjectsZone';
+import { ExperienceZone } from './zones/ExperienceZone';
+import { ContactZone } from './zones/ContactZone';
+
+export const PortfolioCanvas: React.FC = () => {
+  return (
+    <div className="fixed inset-0 w-full h-full pointer-events-auto bg-[#030712]">
+      <Canvas
+        camera={{ position: [0, 1.2, 8.5], fov: 48, near: 0.1, far: 1000 }}
+        dpr={[1, 1.75]} // Cap DPR for high performance
+        gl={{
+          antialias: true,
+          powerPreference: 'high-performance',
+          alpha: false,
+        }}
+      >
+        <color attach="background" args={['#030712']} />
+        <fog attach="fog" args={['#030712', 15, 65]} />
+
+        {/* Ambient & Scene Lights */}
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[10, 15, 10]} intensity={1.2} color="#00F0FF" />
+        <directionalLight position={[-10, -10, -5]} intensity={0.8} color="#8B5CF6" />
+        <pointLight position={[0, 0, 0]} intensity={1.5} color="#38BDF8" distance={20} />
+
+        <Suspense fallback={null}>
+          <CameraRig />
+          <DataParticles />
+
+          {/* 6 Spatial Zones */}
+          <HeroZone />
+          <AboutZone />
+          <SkillsZone />
+          <ProjectsZone />
+          <ExperienceZone />
+          <ContactZone />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};
