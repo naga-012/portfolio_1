@@ -219,7 +219,9 @@ export const portfolioData: PortfolioData = {
       image: '/projects/inti-ruchi.jpg',
       links: {
         github: 'https://github.com/naga-012/inti-ruchi-food-platform',
-        live: 'https://inti-ruchi.demo.app',
+        live: 'https://inti-ruchi-frontend.onrender.com',
+        customerLive: 'https://inti-ruchi-frontend.onrender.com',
+        adminLive: 'https://inti-ruchi-admin.onrender.com',
       },
     },
   ],

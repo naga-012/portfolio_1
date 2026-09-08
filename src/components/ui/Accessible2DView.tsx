@@ -277,9 +277,14 @@ export const Accessible2DView: React.FC = () => {
                       href={proj.links.customerLive}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-2.5 py-1 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-purple-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                      className="px-2.5 py-1 rounded-lg border text-[10px] font-mono flex items-center gap-1 transition-all"
+                      style={{
+                        backgroundColor: `${proj.accentColor}15`,
+                        borderColor: `${proj.accentColor}40`,
+                        color: proj.accentColor,
+                      }}
                     >
-                      Customer Store <ArrowUpRight className="w-3 h-3" />
+                      {proj.id === 'mensverse-3d' ? 'Customer Store' : 'Ordering App'} <ArrowUpRight className="w-3 h-3" />
                     </a>
                     <a
                       href={proj.links.adminLive}
@@ -287,7 +292,7 @@ export const Accessible2DView: React.FC = () => {
                       rel="noreferrer"
                       className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-750 border border-slate-700 text-slate-300 text-[10px] font-mono flex items-center gap-1 transition-all"
                     >
-                      Admin Portal <ArrowUpRight className="w-3 h-3" />
+                      {proj.id === 'inti-ruchi' ? 'Kitchen Admin' : 'Admin Portal'} <ArrowUpRight className="w-3 h-3" />
                     </a>
                   </div>
                 )}

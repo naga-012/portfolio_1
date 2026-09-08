@@ -232,9 +232,20 @@ export const ProjectModal: React.FC = () => {
                     href={selectedProject.links.customerLive}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-5 py-2.5 rounded-xl text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg shadow-purple-500/25 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-purple-400/40"
+                    className="px-5 py-2.5 rounded-xl text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg"
+                    style={{
+                      backgroundColor: selectedProject.accentColor,
+                      color: selectedProject.id === 'inti-ruchi' ? '#022c22' : '#ffffff',
+                      boxShadow: `0 10px 25px -5px ${selectedProject.accentColor}40`,
+                    }}
                   >
-                    <span>Customer 3D Store</span>
+                    <span>
+                      {selectedProject.id === 'mensverse-3d'
+                        ? 'Customer 3D Store'
+                        : selectedProject.id === 'inti-ruchi'
+                        ? 'Customer Ordering App'
+                        : 'Customer Portal'}
+                    </span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
@@ -243,10 +254,17 @@ export const ProjectModal: React.FC = () => {
                     href={selectedProject.links.adminLive}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-5 py-2.5 rounded-xl text-slate-200 hover:text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg bg-slate-900 hover:bg-slate-800 border border-purple-500/30"
+                    className="px-5 py-2.5 rounded-xl text-slate-200 hover:text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg bg-slate-900 hover:bg-slate-800"
+                    style={{
+                      border: `1px solid ${selectedProject.accentColor}50`,
+                    }}
                   >
-                    <span>Admin Dashboard</span>
-                    <ExternalLink className="w-4 h-4 text-purple-400" />
+                    <span>
+                      {selectedProject.id === 'inti-ruchi'
+                        ? 'Kitchen Admin Portal'
+                        : 'Admin Dashboard'}
+                    </span>
+                    <ExternalLink className="w-4 h-4" style={{ color: selectedProject.accentColor }} />
                   </a>
                 )}
                 {!selectedProject.links.patientLive && !selectedProject.links.customerLive && selectedProject.links.live && (
