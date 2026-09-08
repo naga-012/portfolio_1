@@ -26,15 +26,15 @@ export const ProjectsZone: React.FC = () => {
       {/* Section Header floating above the cards */}
       <Float speed={1.5} rotationIntensity={0.1} floatIntensity={0.3}>
         <Html position={[0, 3.2, 0]} center transform distanceFactor={8} className="pointer-events-none select-none w-[700px]">
-          <div className="flex flex-col items-center text-center p-4 backdrop-blur-md bg-slate-950/70 rounded-2xl border border-cyan-500/20 shadow-xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-2">
-              <Sparkles className="w-3 h-3" />
+          <div className="flex flex-col items-center text-center p-4 backdrop-blur-2xl bg-slate-950/95 rounded-2xl border border-cyan-500/35 shadow-2xl">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 font-bold text-xs font-mono mb-2 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5" />
               <span>PRODUCTION WORK & CAPSTONES</span>
             </div>
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl font-black text-white tracking-tight drop-shadow-md">
               Featured 3D Projects & Case Studies
             </h2>
-            <p className="text-xs text-slate-300 font-mono mt-1">
+            <p className="text-xs text-slate-100 font-medium font-mono mt-1">
               Select any project node to view architecture diagrams, problem breakdown & metrics
             </p>
           </div>

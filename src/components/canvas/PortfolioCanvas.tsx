@@ -14,7 +14,7 @@ export const PortfolioCanvas: React.FC = () => {
     <div className="fixed inset-0 w-full h-full pointer-events-auto bg-[#030712]">
       <Canvas
         camera={{ position: [0, 1.2, 8.5], fov: 48, near: 0.1, far: 1000 }}
-        dpr={[1, 1.75]} // Cap DPR for high performance
+        dpr={[1, 2]} // Crisp high-DPI rendering
         gl={{
           antialias: true,
           powerPreference: 'high-performance',
@@ -22,7 +22,7 @@ export const PortfolioCanvas: React.FC = () => {
         }}
       >
         <color attach="background" args={['#030712']} />
-        <fog attach="fog" args={['#030712', 15, 65]} />
+        <fog attach="fog" args={['#030712', 30, 100]} />
 
         {/* Ambient & Scene Lights */}
         <ambientLight intensity={0.7} />

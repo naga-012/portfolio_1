@@ -119,42 +119,42 @@ export const HeroZone: React.FC = () => {
           transform
           className="pointer-events-none select-none w-[780px]"
         >
-          <div className="flex flex-col items-center text-center p-6 backdrop-blur-md bg-slate-950/60 rounded-3xl border border-cyan-500/20 shadow-2xl shadow-cyan-500/10 pointer-events-auto">
+          <div className="flex flex-col items-center text-center p-6 backdrop-blur-2xl bg-slate-950/95 rounded-3xl border border-cyan-500/35 shadow-2xl shadow-cyan-500/15 pointer-events-auto">
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-bold text-xs font-mono mb-4 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span className="w-2 h-2 rounded-full bg-emerald-400 -ml-3" />
               {portfolioData.identity.status}
             </div>
 
             {/* Name & Title */}
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2">
-              <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-2 drop-shadow-md">
+              <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
                 {portfolioData.identity.name}
               </span>
             </h1>
 
-            <h2 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 bg-clip-text text-transparent mb-3">
+            <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 bg-clip-text text-transparent mb-3 drop-shadow-sm">
               {portfolioData.identity.title}
             </h2>
 
             {/* Tagline */}
-            <p className="text-slate-300 font-mono text-xs md:text-sm tracking-wide max-w-xl mb-6 px-4 py-1.5 bg-slate-900/80 rounded-lg border border-slate-800">
+            <p className="text-slate-100 font-mono text-xs md:text-sm font-medium tracking-wide max-w-xl mb-6 px-4 py-2 bg-slate-900/95 rounded-xl border border-slate-700 shadow-inner">
               {portfolioData.identity.tagline}
             </p>
 
             {/* Key Strengths Pills */}
             <div className="flex flex-wrap justify-center gap-2 mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-cyan-200 text-xs font-mono font-medium shadow-sm">
                 <Brain className="w-3.5 h-3.5 text-cyan-400" /> Production AI & CNNs
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-950/80 border border-purple-500/40 text-purple-200 text-xs font-mono font-medium shadow-sm">
                 <BarChart2 className="w-3.5 h-3.5 text-purple-400" /> Power BI & Analytics
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-sky-950/60 border border-sky-500/30 text-sky-300 text-xs font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-950/80 border border-sky-500/40 text-sky-200 text-xs font-mono font-medium shadow-sm">
                 <Terminal className="w-3.5 h-3.5 text-sky-400" /> FastAPI Microservices
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-xs font-mono font-medium shadow-sm">
                 <Database className="w-3.5 h-3.5 text-emerald-400" /> High-Scale SQL ETL
               </span>
             </div>

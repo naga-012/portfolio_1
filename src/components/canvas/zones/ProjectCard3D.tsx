@@ -103,51 +103,51 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
         <div
           className={`p-6 rounded-2xl flex flex-col justify-between h-[450px] transition-all duration-300 pointer-events-auto ${
             hovered
-              ? 'bg-slate-950/90 shadow-2xl shadow-cyan-500/20'
-              : 'bg-slate-950/75'
+              ? 'bg-slate-950/98 shadow-2xl shadow-cyan-500/30'
+              : 'bg-slate-950/95 shadow-xl'
           }`}
           style={{
-            border: `1px solid ${hovered ? project.accentColor : 'rgba(255, 255, 255, 0.1)'}`,
+            border: `1.5px solid ${hovered ? project.accentColor : 'rgba(255, 255, 255, 0.18)'}`,
           }}
         >
           {/* Top Row: Category & Status */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <span
-                className="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold tracking-wider uppercase"
+                className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider uppercase shadow-sm"
                 style={{
-                  backgroundColor: `${project.accentColor}20`,
+                  backgroundColor: `${project.accentColor}25`,
                   color: project.accentColor,
-                  border: `1px solid ${project.accentColor}50`,
+                  border: `1px solid ${project.accentColor}70`,
                 }}
               >
                 {project.category}
               </span>
 
-              <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
-                <Cpu className="w-3 h-3 text-cyan-400" />
+              <span className="text-[11px] font-mono text-slate-300 font-medium flex items-center gap-1">
+                <Cpu className="w-3.5 h-3.5 text-cyan-400" />
                 Case Study 0{index + 1}
               </span>
             </div>
 
             {/* Project Photo Preview */}
             {project.image && (
-              <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 border border-slate-800/80 shadow-md">
+              <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 border border-slate-700 shadow-md">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
               </div>
             )}
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+            <h3 className="text-xl font-black text-white mb-2 tracking-tight group-hover:text-cyan-300 transition-colors drop-shadow-sm">
               {project.title}
             </h3>
             {/* Description */}
-            <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed mb-3">
+            <p className="text-xs text-slate-100 font-medium line-clamp-2 leading-relaxed mb-3">
               {project.shortDesc}
             </p>
 
@@ -156,15 +156,15 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
               {project.metrics.map((metric, i) => (
                 <div
                   key={i}
-                  className="p-2 rounded-lg bg-slate-900/90 border border-slate-800"
+                  className="p-2.5 rounded-xl bg-slate-900/95 border border-slate-750 shadow-sm"
                 >
                   <div
-                    className="text-base font-extrabold font-mono"
+                    className="text-base font-black font-mono tracking-tight"
                     style={{ color: project.accentColor }}
                   >
                     {metric.highlight}
                   </div>
-                  <div className="text-[10px] text-slate-400 font-sans truncate">
+                  <div className="text-[11px] text-slate-200 font-medium font-sans truncate mt-0.5">
                     {metric.label}
                   </div>
                 </div>
@@ -179,13 +179,13 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
               {project.techStack.slice(0, 4).map((tech, i) => (
                 <span
                   key={i}
-                  className="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[10px] font-mono text-slate-300"
+                  className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-[10px] font-mono font-medium text-slate-200"
                 >
                   {tech}
                 </span>
               ))}
               {project.techStack.length > 4 && (
-                <span className="px-1.5 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[10px] font-mono text-slate-400">
+                <span className="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 text-[10px] font-mono font-medium text-slate-300">
                   +{project.techStack.length - 4}
                 </span>
               )}

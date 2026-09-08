@@ -14,7 +14,20 @@
     height: 100%;
     overflow-x: hidden;
     background-color: #030712;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+}
+
+/* 3D Canvas Text Clarity Enhancements */
+div[style*="transform"],
+div[class*="pointer-events-"] {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Custom Scrollbar */
