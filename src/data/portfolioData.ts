@@ -124,6 +124,52 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
+      id: 'ecommerce-data',
+      title: 'E-Commerce Data Analytics',
+      shortDesc: 'Transactional data intelligence pipeline with 50k+ records, RFM customer segmentation, and interactive Power BI executive reporting.',
+      category: 'Data & Analytics',
+      accentColor: '#F59E0B',
+      featured: true,
+      metrics: [
+        { highlight: '50k+', label: 'Transactions Analyzed' },
+        { highlight: '50+', label: 'Optimized MySQL Queries' },
+      ],
+      problem:
+        'Raw multichannel e-commerce sales lacked unified schema visibility, obscuring customer retention, high-value buyer segments, and multi-regional product profit margins.',
+      approach:
+        'Cleaned, normalized, and explored 50,000+ sales and customer records utilizing Python (Pandas, NumPy). Authored 50+ high-performance MySQL queries with complex JOINs, CTEs, subqueries, and window functions. Conducted RFM (Recency, Frequency, Monetary) analysis to segment buyers into Champions, Loyal, At-Risk, and Lost tiers.',
+      result:
+        'Built an executive Power BI dashboard displaying critical business KPIs (Revenue, Profit, Orders, AOV, Profit Margin, Return Rate) with dynamic slicing across date, region, category, and customer segment for data-driven growth strategies.',
+      techStack: ['Python', 'Pandas', 'NumPy', 'MySQL', 'Power BI', 'DAX', 'RFM Analysis', 'Advanced Excel'],
+      image: '/projects/ecommerce-data.jpg',
+      links: {
+        github: 'https://github.com/naga-012/E-COMMERCE-DATA',
+      },
+    },
+    {
+      id: 'healthcare-appointment',
+      title: 'Healthcare Appointment Analytics',
+      shortDesc: 'Hospital operations intelligence platform analyzing 100k+ appointment records, doctor workloads, and cancellation rates.',
+      category: 'Data & Analytics',
+      accentColor: '#06B6D4',
+      featured: true,
+      metrics: [
+        { highlight: '100k+', label: 'Clinical Records Examined' },
+        { highlight: '50+', label: 'Complex MySQL Queries' },
+      ],
+      problem:
+        'Healthcare facilities experienced unpredictable patient no-show rates, skewed doctor workloads, and protracted waiting queues due to lack of centralized telemetry across clinical departments.',
+      approach:
+        'Analyzed 100,000+ patient and doctor appointment logs using Python (Pandas, NumPy) for anomaly cleaning and trend extraction. Authored 50+ MySQL queries utilizing JOINs, CTEs, subqueries, CASE statements, and window functions to evaluate department capacity and appointment cycles. Conducted exploratory data analysis (EDA) pinpointing high-demand slots, no-show correlations, and clinician scheduling bottlenecks.',
+      result:
+        'Constructed a comprehensive Power BI executive dashboard tracking Total Appointments, Completed Visits, Cancellation Rate, No-Show Rate, Patient Count, Department Revenue, and Average Waiting Time, empowering hospital directors to optimize operational throughput.',
+      techStack: ['Python', 'Pandas', 'NumPy', 'MySQL', 'Power BI', 'DAX', 'Exploratory Data Analysis', 'Advanced Excel'],
+      image: '/projects/healthcare-appointment.jpg',
+      links: {
+        github: 'https://github.com/naga-012/HEALTHCARE-APPOINTMENT-HOSPITAL',
+      },
+    },
+    {
       id: 'health-connect',
       title: 'Health Connect Hub',
       shortDesc: 'Healthcare appointment scheduling platform with live slot management and analytics.',
@@ -227,29 +273,6 @@ export const portfolioData: PortfolioData = {
         live: 'https://inti-ruchi-frontend.onrender.com',
         customerLive: 'https://inti-ruchi-frontend.onrender.com',
         adminLive: 'https://inti-ruchi-admin.onrender.com',
-      },
-    },
-    {
-      id: 'ecommerce-data',
-      title: 'E-Commerce Data Analytics',
-      shortDesc: 'Transactional data intelligence pipeline with 50k+ records, RFM customer segmentation, and interactive Power BI executive reporting.',
-      category: 'Data & Analytics',
-      accentColor: '#F59E0B',
-      featured: true,
-      metrics: [
-        { highlight: '50k+', label: 'Transactions Analyzed' },
-        { highlight: '50+', label: 'Optimized MySQL Queries' },
-      ],
-      problem:
-        'Raw multichannel e-commerce sales lacked unified schema visibility, obscuring customer retention, high-value buyer segments, and multi-regional product profit margins.',
-      approach:
-        'Cleaned, normalized, and explored 50,000+ sales and customer records utilizing Python (Pandas, NumPy). Authored 50+ high-performance MySQL queries with complex JOINs, CTEs, subqueries, and window functions. Conducted RFM (Recency, Frequency, Monetary) analysis to segment buyers into Champions, Loyal, At-Risk, and Lost tiers.',
-      result:
-        'Built an executive Power BI dashboard displaying critical business KPIs (Revenue, Profit, Orders, AOV, Profit Margin, Return Rate) with dynamic slicing across date, region, category, and customer segment for data-driven growth strategies.',
-      techStack: ['Python', 'Pandas', 'NumPy', 'MySQL', 'Power BI', 'DAX', 'RFM Analysis', 'Advanced Excel'],
-      image: '/projects/ecommerce-data.jpg',
-      links: {
-        github: 'https://github.com/naga-012/E-COMMERCE-DATA',
       },
     },
   ],
