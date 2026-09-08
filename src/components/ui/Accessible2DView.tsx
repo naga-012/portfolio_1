@@ -242,13 +242,34 @@ export const Accessible2DView: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {proj.techStack.map((t, i) => (
                     <span key={i} className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[10px] font-mono text-slate-400">
                       {t}
                     </span>
                   ))}
                 </div>
+
+                {proj.links.patientLive && proj.links.doctorLive && (
+                  <div className="flex items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href={proj.links.patientLive}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2.5 py-1 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                    >
+                      Patient App <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                    <a
+                      href={proj.links.doctorLive}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-2.5 py-1 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                    >
+                      Doctor Portal <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                )}
 
                 <div className="flex items-center justify-between pt-3 border-t border-slate-800/80 text-xs font-mono">
                   <span className="text-cyan-400 flex items-center gap-1 group-hover:underline">

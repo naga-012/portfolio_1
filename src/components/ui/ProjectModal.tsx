@@ -193,7 +193,7 @@ export const ProjectModal: React.FC = () => {
 
             {/* Action Links */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-6 border-t border-slate-800">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 {selectedProject.links.github && (
                   <a
                     href={selectedProject.links.github}
@@ -205,7 +205,29 @@ export const ProjectModal: React.FC = () => {
                     <span>View Repository</span>
                   </a>
                 )}
-                {selectedProject.links.live && (
+                {selectedProject.links.patientLive && (
+                  <a
+                    href={selectedProject.links.patientLive}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 rounded-xl text-slate-950 font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/25 bg-cyan-400 hover:bg-cyan-300"
+                  >
+                    <span>Patient Booking App</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+                {selectedProject.links.doctorLive && (
+                  <a
+                    href={selectedProject.links.doctorLive}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 rounded-xl text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg shadow-emerald-500/25 bg-emerald-600 hover:bg-emerald-500 border border-emerald-400/40"
+                  >
+                    <span>Doctor Portal App</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+                {!selectedProject.links.patientLive && selectedProject.links.live && (
                   <a
                     href={selectedProject.links.live}
                     target="_blank"
@@ -216,6 +238,17 @@ export const ProjectModal: React.FC = () => {
                     }}
                   >
                     <span>Live Interactive Demo</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
+                {selectedProject.links.demo && (
+                  <a
+                    href={selectedProject.links.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs font-mono flex items-center gap-2 transition-all shadow-lg shadow-purple-500/20"
+                  >
+                    <span>Live Demo App</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}

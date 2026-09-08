@@ -42,6 +42,8 @@ export interface ProjectItem {
     github?: string;
     live?: string;
     demo?: string;
+    patientLive?: string;
+    doctorLive?: string;
   };
   image?: string;
   featured: boolean;
