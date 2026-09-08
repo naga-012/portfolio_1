@@ -10,22 +10,22 @@ export const ProjectsZone: React.FC = () => {
 
   // Dynamically calculate curved gallery layout for any number of projects
   const getCardLayout = (index: number, total: number) => {
-    const spacing = 3.6;
+    const spacing = 2.7;
     const startX = -((total - 1) * spacing) / 2;
     const x = startX + index * spacing;
-    const z = Math.abs(x) * 0.12;
-    const rotY = -x * 0.035;
+    const z = Math.abs(x) * 0.14;
+    const rotY = -x * 0.04;
     return {
-      pos: [x, -0.2, z] as [number, number, number],
+      pos: [x, -0.35, z] as [number, number, number],
       rot: [0, rotY, 0] as [number, number, number],
     };
   };
 
   return (
     <group position={[16, 0, 0]}>
-      {/* Section Header floating above the cards - Compact & Sleek */}
+      {/* Section Header floating cleanly above the cards */}
       <Float speed={1.2} rotationIntensity={0.05} floatIntensity={0.15}>
-        <Html position={[0, 3.6, 0]} center transform distanceFactor={8.5} className="pointer-events-none select-none w-[480px]">
+        <Html position={[0, 3.8, 0]} center transform distanceFactor={9} className="pointer-events-none select-none w-[480px]">
           <div className="flex flex-col items-center text-center py-2 px-5 backdrop-blur-xl bg-slate-950/90 rounded-2xl border border-cyan-500/30 shadow-lg">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-bold text-[10px] font-mono mb-1 shadow-sm">
               <Sparkles className="w-3 h-3" />
