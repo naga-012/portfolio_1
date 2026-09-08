@@ -130,13 +130,24 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
               </span>
             </div>
 
+            {/* Project Photo Preview */}
+            {project.image && (
+              <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 border border-slate-800/80 shadow-md">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+              </div>
+            )}
+
             {/* Title */}
             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
               {project.title}
             </h3>
-
             {/* Description */}
-            <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">
+            <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed mb-3">
               {project.shortDesc}
             </p>
 

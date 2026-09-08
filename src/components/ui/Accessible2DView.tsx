@@ -211,6 +211,17 @@ export const Accessible2DView: React.FC = () => {
                   <span className="text-[11px] font-mono text-slate-400">0{idx + 1}</span>
                 </div>
 
+                {proj.image && (
+                  <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800/80 group-hover:border-slate-700 transition-all">
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  </div>
+                )}
+
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
                   {proj.title}
                 </h3>

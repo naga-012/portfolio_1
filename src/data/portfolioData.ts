@@ -140,6 +140,7 @@ export const portfolioData: PortfolioData = {
       result:
         'Achieved a 45% reduction in API response latency during peak morning registration hours and increased overall medical facility slot utilization by 30%.',
       techStack: ['FastAPI', 'PostgreSQL', 'Power BI', 'SQLAlchemy', 'Python', 'React'],
+      image: '/projects/health-connect.jpg',
       links: {
         github: 'https://github.com/naga-012/health-connect-hub',
         live: 'https://health-connect-hub.demo.app',
@@ -163,6 +164,7 @@ export const portfolioData: PortfolioData = {
       result:
         'Delivered 94.8% test accuracy across multiple tumor classifications with sub-400ms inference turnaround, enhancing diagnostic confidence with interpretable visual heatmaps.',
       techStack: ['PyTorch', 'TensorFlow', 'OpenCV', 'Grad-CAM', 'Streamlit', 'Python', 'NumPy'],
+      image: '/projects/mri-tumor.jpg',
       links: {
         github: 'https://github.com/naga-012/mri-brain-tumor-detection',
         demo: 'https://mri-tumor-ai.demo.app',
@@ -186,6 +188,7 @@ export const portfolioData: PortfolioData = {
       result:
         'Reduced 3D asset initialization to under 800ms, providing 60fps smooth OrbitControls, fabric swatch toggles, and live cart synchronizations.',
       techStack: ['React', 'Three.js', 'React Three Fiber', 'Zustand', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      image: '/projects/mensverse-3d.jpg',
       links: {
         github: 'https://github.com/naga-012/mensverse-3d-store',
         live: 'https://mensverse-3d.demo.app',
@@ -209,6 +212,7 @@ export const portfolioData: PortfolioData = {
       result:
         'Successfully deployed a transparent order tracker with instantaneous customer notifications, zero state inconsistencies, and an intuitive kitchen dispatch board.',
       techStack: ['FastAPI', 'React', 'Vite', 'SQLite', 'JWT', 'Python', 'Tailwind CSS'],
+      image: '/projects/inti-ruchi.jpg',
       links: {
         github: 'https://github.com/naga-012/inti-ruchi-food-platform',
         live: 'https://inti-ruchi.demo.app',

@@ -43,6 +43,7 @@ export interface ProjectItem {
     live?: string;
     demo?: string;
   };
+  image?: string;
   featured: boolean;
 }
 

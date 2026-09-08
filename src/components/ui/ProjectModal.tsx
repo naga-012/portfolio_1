@@ -69,6 +69,23 @@ export const ProjectModal: React.FC = () => {
           </button>
 
           <div className="p-6 sm:p-8 max-h-[85vh] overflow-y-auto">
+            {/* Project Photo / Mockup Banner */}
+            {selectedProject.image && (
+              <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden mb-6 border border-slate-700/80 shadow-2xl group">
+                <img
+                  src={selectedProject.image}
+                  alt={`${selectedProject.title} screenshot`}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-slate-700 text-[11px] font-mono text-cyan-300">
+                    Interactive Interface Preview
+                  </span>
+                </div>
+              </div>
+            )}
+
             {/* Category & Badge */}
             <div className="flex items-center gap-2 mb-3">
               <span
