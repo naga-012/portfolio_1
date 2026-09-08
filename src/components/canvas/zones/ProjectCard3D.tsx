@@ -29,11 +29,20 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
     
     // Subtle breathing float per card with offset
     const floatY = Math.sin(time * 1.5 + index * 0.8) * 0.08;
-    meshRef.current.position.y = position[1] + floatY + (hovered ? 0.2 : 0);
 
-    // Hover scale smoothly
-    const targetScale = hovered ? 1.05 : 1;
-    meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+    // Interactive Hover: Fly forward towards camera in Z, elevate in Y, face viewer flat (rotY=0), and scale up!
+    const targetX = position[0];
+    const targetY = position[1] + floatY + (hovered ? 0.5 : 0);
+    const targetZ = position[2] + (hovered ? 2.8 : 0);
+    const targetScale = hovered ? 1.25 : 1;
+    const targetRotY = hovered ? 0 : rotation[1];
+
+    meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, targetX, 0.12);
+    meshRef.current.position.y = THREE.MathUtils.lerp(meshRef.current.position.y, targetY, 0.12);
+    meshRef.current.position.z = THREE.MathUtils.lerp(meshRef.current.position.z, targetZ, 0.12);
+
+    meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, targetRotY, 0.12);
+    meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.12);
   });
 
   return (
@@ -58,7 +67,7 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
         <meshStandardMaterial
           color={hovered ? '#0f172a' : '#030712'}
           emissive={project.accentColor}
-          emissiveIntensity={hovered ? 0.45 : 0.15}
+          emissiveIntensity={hovered ? 0.75 : 0.15}
           roughness={0.2}
           metalness={0.8}
         />
@@ -68,29 +77,29 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
       <lineSegments position={[0, 0, 0.01]}>
         <edgesGeometry args={[new THREE.BoxGeometry(3.22, 4.42, 0.1)]} />
         <lineBasicMaterial
-          color={project.accentColor}
-          linewidth={hovered ? 2 : 1}
+          color={hovered ? '#ffffff' : project.accentColor}
+          linewidth={hovered ? 3 : 1}
           transparent
-          opacity={hovered ? 0.9 : 0.4}
+          opacity={hovered ? 1 : 0.4}
         />
       </lineSegments>
 
       {/* Cyber Corner Accents */}
       <mesh position={[-1.5, 2.1, 0.06]}>
         <boxGeometry args={[0.2, 0.2, 0.02]} />
-        <meshBasicMaterial color={project.accentColor} />
+        <meshBasicMaterial color={hovered ? '#ffffff' : project.accentColor} />
       </mesh>
       <mesh position={[1.5, 2.1, 0.06]}>
         <boxGeometry args={[0.2, 0.2, 0.02]} />
-        <meshBasicMaterial color={project.accentColor} />
+        <meshBasicMaterial color={hovered ? '#ffffff' : project.accentColor} />
       </mesh>
       <mesh position={[-1.5, -2.1, 0.06]}>
         <boxGeometry args={[0.2, 0.2, 0.02]} />
-        <meshBasicMaterial color={project.accentColor} />
+        <meshBasicMaterial color={hovered ? '#ffffff' : project.accentColor} />
       </mesh>
       <mesh position={[1.5, -2.1, 0.06]}>
         <boxGeometry args={[0.2, 0.2, 0.02]} />
-        <meshBasicMaterial color={project.accentColor} />
+        <meshBasicMaterial color={hovered ? '#ffffff' : project.accentColor} />
       </mesh>
 
       {/* Card UI Content in 3D Space */}
@@ -98,16 +107,22 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
         position={[0, 0, 0.08]}
         transform
         distanceFactor={5.5}
-        className="pointer-events-none select-none w-[340px]"
+        zIndexRange={hovered ? [100, 50] : [10, 0]}
+        className="select-none w-[340px]"
       >
         <div
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
           className={`p-6 rounded-2xl flex flex-col justify-between h-[450px] transition-all duration-300 pointer-events-auto ${
             hovered
-              ? 'bg-slate-950/98 shadow-2xl shadow-cyan-500/30'
+              ? 'bg-slate-950 shadow-2xl'
               : 'bg-slate-950/95 shadow-xl'
           }`}
           style={{
-            border: `1.5px solid ${hovered ? project.accentColor : 'rgba(255, 255, 255, 0.18)'}`,
+            border: `2px solid ${hovered ? project.accentColor : 'rgba(255, 255, 255, 0.18)'}`,
+            boxShadow: hovered
+              ? `0 25px 60px -12px ${project.accentColor}70, 0 0 40px ${project.accentColor}40`
+              : '0 10px 25px -5px rgba(0, 0, 0, 0.5)',
           }}
         >
           {/* Top Row: Category & Status */}
