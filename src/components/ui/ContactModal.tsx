@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePortfolioStore } from '../../store/usePortfolioStore';
 import { portfolioData } from '../../data/portfolioData';
-import { X, Send, Mail, CheckCircle2, User, MessageSquare, Linkedin, Github } from 'lucide-react';
+import { X, Send, Mail, Phone, CheckCircle2, User, MessageSquare, Linkedin, Github } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export const ContactModal: React.FC = () => {
@@ -173,7 +173,7 @@ export const ContactModal: React.FC = () => {
               </form>
             )}
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-400">
               <a
                 href={portfolioData.identity.linkedin}
                 target="_blank"
@@ -189,6 +189,12 @@ export const ContactModal: React.FC = () => {
                 className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
               >
                 <Github className="w-3.5 h-3.5" /> GitHub
+              </a>
+              <a
+                href={`tel:${portfolioData.identity.phone}`}
+                className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" /> {portfolioData.identity.phone}
               </a>
               <span className="text-[11px] text-slate-500">Hyderabad, India</span>
             </div>

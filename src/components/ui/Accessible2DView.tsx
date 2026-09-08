@@ -13,6 +13,7 @@ import {
   Github,
   Mail,
   Linkedin,
+  Phone,
   FileText,
   Sparkles,
   ArrowUpRight,
@@ -72,6 +73,42 @@ export const Accessible2DView: React.FC = () => {
             <FileText className="w-4 h-4 text-purple-400" />
             <span>View Resumes</span>
           </button>
+        </div>
+
+        {/* Start Contact Bar: LinkedIn, GitHub, Gmail, Phone */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+          <a
+            href={portfolioData.identity.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-[#0077B5]/20 border border-slate-700 hover:border-[#0077B5] text-slate-200 hover:text-[#00A0DC] text-xs font-mono transition-all"
+          >
+            <Linkedin className="w-3.5 h-3.5 text-[#00A0DC]" />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href={portfolioData.identity.github}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white text-xs font-mono transition-all"
+          >
+            <Github className="w-3.5 h-3.5" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={`mailto:${portfolioData.identity.email}`}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/60 text-slate-200 hover:text-rose-300 text-xs font-mono transition-all"
+          >
+            <Mail className="w-3.5 h-3.5 text-rose-400" />
+            <span>{portfolioData.identity.email}</span>
+          </a>
+          <a
+            href={`tel:${portfolioData.identity.phone}`}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-emerald-500/20 border border-slate-700 hover:border-emerald-500/60 text-slate-200 hover:text-emerald-300 text-xs font-mono transition-all"
+          >
+            <Phone className="w-3.5 h-3.5 text-emerald-400" />
+            <span>{portfolioData.identity.phone}</span>
+          </a>
         </div>
       </section>
 
@@ -393,22 +430,75 @@ export const Accessible2DView: React.FC = () => {
       <section id="contact" className="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 text-center space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Let's Connect</h2>
         <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-          Currently seeking full-time roles in AI Full Stack Engineering and Data Analytics.
+          Currently seeking full-time roles in AI Full Stack Engineering and Data Analytics. Reach out directly:
         </p>
 
-        <div className="flex justify-center gap-3 pt-2">
+        {/* Direct Connect Grid: LinkedIn, GitHub, Gmail, Phone (LAST) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-2 text-left">
+          <a
+            href={portfolioData.identity.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="p-3 rounded-2xl bg-slate-900/80 hover:bg-[#0077B5]/20 border border-slate-800 hover:border-[#0077B5] flex items-center gap-3 transition-all group"
+          >
+            <div className="w-9 h-9 rounded-xl bg-[#0077B5]/20 flex items-center justify-center text-[#00A0DC] shrink-0">
+              <Linkedin className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-mono text-slate-400">LinkedIn</div>
+              <div className="text-xs font-bold text-white group-hover:text-[#00A0DC] truncate">nagarjun-myakala-</div>
+            </div>
+          </a>
+
+          <a
+            href={portfolioData.identity.github}
+            target="_blank"
+            rel="noreferrer"
+            className="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-500 flex items-center gap-3 transition-all group"
+          >
+            <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center text-slate-200 shrink-0">
+              <Github className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-mono text-slate-400">GitHub</div>
+              <div className="text-xs font-bold text-white group-hover:text-cyan-300 truncate">naga-012</div>
+            </div>
+          </a>
+
+          <a
+            href={`mailto:${portfolioData.identity.email}`}
+            className="p-3 rounded-2xl bg-slate-900/80 hover:bg-rose-500/20 border border-slate-800 hover:border-rose-500/60 flex items-center gap-3 transition-all group"
+          >
+            <div className="w-9 h-9 rounded-xl bg-rose-500/15 flex items-center justify-center text-rose-400 shrink-0">
+              <Mail className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-mono text-slate-400">Gmail</div>
+              <div className="text-xs font-bold text-white group-hover:text-rose-300 truncate">{portfolioData.identity.email}</div>
+            </div>
+          </a>
+
+          <a
+            href={`tel:${portfolioData.identity.phone}`}
+            className="p-3 rounded-2xl bg-slate-900/80 hover:bg-emerald-500/20 border border-slate-800 hover:border-emerald-500/60 flex items-center gap-3 transition-all group"
+          >
+            <div className="w-9 h-9 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-400 shrink-0">
+              <Phone className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-mono text-slate-400">Phone / WhatsApp</div>
+              <div className="text-xs font-bold text-white group-hover:text-emerald-300 truncate">{portfolioData.identity.phone}</div>
+            </div>
+          </a>
+        </div>
+
+        <div className="flex justify-center gap-3 pt-3">
           <button
             onClick={() => setContactModalOpen(true)}
-            className="px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs font-mono transition-colors"
+            className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono shadow-md transition-colors"
           >
             Launch Message Form
           </button>
-          <a
-            href={`mailto:${portfolioData.identity.email}`}
-            className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono transition-colors"
-          >
-            Direct Email
-          </a>
         </div>
       </section>
     </div>

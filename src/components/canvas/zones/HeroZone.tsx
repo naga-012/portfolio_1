@@ -4,7 +4,7 @@ import { Float, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { usePortfolioStore } from '../../../store/usePortfolioStore';
 import { portfolioData } from '../../../data/portfolioData';
-import { ArrowRight, Sparkles, Database, Brain, Terminal, BarChart2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Database, Brain, Terminal, BarChart2, Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 export const HeroZone: React.FC = () => {
   const setZone = usePortfolioStore((state) => state.setZone);
@@ -183,6 +183,45 @@ export const HeroZone: React.FC = () => {
               >
                 About Me
               </button>
+            </div>
+
+            {/* Quick Contact & Social Bar (START) */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mt-5 pt-4 border-t border-slate-800/80 w-full">
+              <a
+                href={portfolioData.identity.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-[#0077B5]/20 border border-slate-700 hover:border-[#0077B5] text-slate-200 hover:text-[#00A0DC] text-xs font-mono transition-all shadow-sm"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-[#00A0DC]" />
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href={portfolioData.identity.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white text-xs font-mono transition-all shadow-sm"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href={`mailto:${portfolioData.identity.email}`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/60 text-slate-200 hover:text-rose-300 text-xs font-mono transition-all shadow-sm"
+              >
+                <Mail className="w-3.5 h-3.5 text-rose-400" />
+                <span>{portfolioData.identity.email}</span>
+              </a>
+
+              <a
+                href={`tel:${portfolioData.identity.phone}`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 hover:bg-emerald-500/20 border border-slate-700 hover:border-emerald-500/60 text-slate-200 hover:text-emerald-300 text-xs font-mono transition-all shadow-sm"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <span>{portfolioData.identity.phone}</span>
+              </a>
             </div>
           </div>
         </Html>
