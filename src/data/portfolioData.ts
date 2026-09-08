@@ -143,9 +143,9 @@ export const portfolioData: PortfolioData = {
       image: '/projects/health-connect.jpg',
       links: {
         github: 'https://github.com/naga-012/health-connect-hub',
-        live: 'https://health-connect-patient-booking.vercel.app/',
-        patientLive: 'https://health-connect-patient-booking.vercel.app/',
-        doctorLive: 'https://health-connect-doctor.vercel.app/',
+        live: 'https://health-connect-patient-booking.onrender.com',
+        patientLive: 'https://health-connect-patient-booking.onrender.com',
+        doctorLive: 'https://health-connect-doctor.onrender.com',
       },
     },
     {
