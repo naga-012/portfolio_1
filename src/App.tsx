@@ -8,6 +8,8 @@ import { ResumeModal } from './components/ui/ResumeModal';
 import { ContactModal } from './components/ui/ContactModal';
 import { Accessible2DView } from './components/ui/Accessible2DView';
 import { LoadingScreen } from './components/ui/LoadingScreen';
+import { ScrollIndicator } from './components/ui/ScrollIndicator';
+import { useScrollNavigation } from './hooks/useScrollNavigation';
 
 export const App: React.FC = () => {
   const is3DMode = usePortfolioStore((state) => state.is3DMode);
@@ -30,6 +32,9 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('resize', checkDevice);
   }, [setIsMobile, setIs3DMode]);
 
+  // Enable smooth mouse wheel, trackpad, touch swipe, and keyboard zone navigation
+  useScrollNavigation();
+
   return (
     <main className="relative min-h-screen bg-[#030712] text-slate-100 overflow-x-hidden selection:bg-cyan-500 selection:text-black">
       {/* 3D Asset Boot Loader */}
@@ -43,6 +48,9 @@ export const App: React.FC = () => {
 
       {/* Side Zone Dot Navigator for 3D Scene */}
       <ZoneNavigation />
+
+      {/* Interactive Bottom Scroll Wheel Indicator */}
+      <ScrollIndicator />
 
       {/* Accessible / 2D High Performance View (always accessible for screen readers & SEO) */}
       <Accessible2DView />

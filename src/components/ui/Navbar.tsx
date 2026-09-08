@@ -57,7 +57,15 @@ export const Navbar: React.FC = () => {
             return (
               <button
                 key={item.id}
-                onClick={() => setZone(item.id)}
+                onClick={() => {
+                  setZone(item.id);
+                  if (!is3DMode) {
+                    const el = document.getElementById(item.id);
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
                 className={`px-3 py-1 rounded-full text-xs font-mono transition-all duration-200 ${
                   isActive
                     ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm'

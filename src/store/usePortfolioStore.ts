@@ -48,8 +48,8 @@ interface PortfolioState {
   
   // Actions
   setZone: (zone: ZoneId) => void;
-  nextZone: () => void;
-  prevZone: () => void;
+  nextZone: (clamp?: boolean) => void;
+  prevZone: (clamp?: boolean) => void;
   setSelectedProject: (project: ProjectItem | null) => void;
   setResumeModalOpen: (open: boolean) => void;
   setContactModalOpen: (open: boolean) => void;
@@ -81,16 +81,28 @@ export const usePortfolioStore = create<PortfolioState>((set, get) => ({
     });
   },
 
-  nextZone: () => {
+  nextZone: (clamp: boolean = false) => {
     const currentIndex = ZONE_ORDER.indexOf(get().currentZone);
-    const nextIndex = (currentIndex + 1) % ZONE_ORDER.length;
-    get().setZone(ZONE_ORDER[nextIndex]);
+    if (clamp) {
+      if (currentIndex < ZONE_ORDER.length - 1) {
+        get().setZone(ZONE_ORDER[currentIndex + 1]);
+      }
+    } else {
+      const nextIndex = (currentIndex + 1) % ZONE_ORDER.length;
+      get().setZone(ZONE_ORDER[nextIndex]);
+    }
   },
 
-  prevZone: () => {
+  prevZone: (clamp: boolean = false) => {
     const currentIndex = ZONE_ORDER.indexOf(get().currentZone);
-    const prevIndex = (currentIndex - 1 + ZONE_ORDER.length) % ZONE_ORDER.length;
-    get().setZone(ZONE_ORDER[prevIndex]);
+    if (clamp) {
+      if (currentIndex > 0) {
+        get().setZone(ZONE_ORDER[currentIndex - 1]);
+      }
+    } else {
+      const prevIndex = (currentIndex - 1 + ZONE_ORDER.length) % ZONE_ORDER.length;
+      get().setZone(ZONE_ORDER[prevIndex]);
+    }
   },
 
   setSelectedProject: (project: ProjectItem | null) => set({ selectedProject: project }),

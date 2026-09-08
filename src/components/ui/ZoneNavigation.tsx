@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { usePortfolioStore, ZONE_ORDER } from '../../store/usePortfolioStore';
 import { ZoneId } from '../../types/portfolio';
 import { ChevronUp, ChevronDown } from 'lucide-react';
@@ -19,31 +19,7 @@ export const ZoneNavigation: React.FC = () => {
     contact: '06 Contact',
   };
 
-  // Keyboard navigation listener (ArrowUp, ArrowDown, 1-6)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Avoid intercepting if an input or textarea is focused
-      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) {
-        return;
-      }
 
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-        e.preventDefault();
-        nextZone();
-      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-        e.preventDefault();
-        prevZone();
-      } else if (['1', '2', '3', '4', '5', '6'].includes(e.key)) {
-        const index = parseInt(e.key, 10) - 1;
-        if (ZONE_ORDER[index]) {
-          setZone(ZONE_ORDER[index]);
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextZone, prevZone, setZone]);
 
   if (!is3DMode) return null;
 
