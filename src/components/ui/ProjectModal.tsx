@@ -194,7 +194,49 @@ export const ProjectModal: React.FC = () => {
             {/* Action Links */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-6 border-t border-slate-800">
               <div className="flex flex-wrap items-center gap-3">
-                {selectedProject.links.github && (
+                {selectedProject.links.patientGithub && selectedProject.links.doctorGithub ? (
+                  <>
+                    <a
+                      href={selectedProject.links.patientGithub}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 hover:border-cyan-400 text-xs font-mono flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
+                    >
+                      <Github className="w-4 h-4 text-cyan-400" />
+                      <span>Patient Booking Repo</span>
+                    </a>
+                    <a
+                      href={selectedProject.links.doctorGithub}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-400 text-xs font-mono flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-emerald-500/10"
+                    >
+                      <Github className="w-4 h-4 text-emerald-400" />
+                      <span>Doctor Portal Repo</span>
+                    </a>
+                  </>
+                ) : selectedProject.links.customerGithub && selectedProject.links.adminGithub ? (
+                  <>
+                    <a
+                      href={selectedProject.links.customerGithub}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-400 text-xs font-mono flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-emerald-500/10"
+                    >
+                      <Github className="w-4 h-4 text-emerald-400" />
+                      <span>Customer App Repo</span>
+                    </a>
+                    <a
+                      href={selectedProject.links.adminGithub}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-teal-300 border border-teal-500/30 hover:border-teal-400 text-xs font-mono flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-teal-500/10"
+                    >
+                      <Github className="w-4 h-4 text-teal-400" />
+                      <span>Kitchen Admin Repo</span>
+                    </a>
+                  </>
+                ) : selectedProject.links.github ? (
                   <a
                     href={selectedProject.links.github}
                     target="_blank"
@@ -204,7 +246,7 @@ export const ProjectModal: React.FC = () => {
                     <Github className="w-4 h-4" />
                     <span>View Repository</span>
                   </a>
-                )}
+                ) : null}
                 {selectedProject.links.patientLive && (
                   <a
                     href={selectedProject.links.patientLive}

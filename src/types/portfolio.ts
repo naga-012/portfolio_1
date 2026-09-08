@@ -40,6 +40,10 @@ export interface ProjectItem {
   techStack: string[];
   links: {
     github?: string;
+    patientGithub?: string;
+    doctorGithub?: string;
+    customerGithub?: string;
+    adminGithub?: string;
     live?: string;
     demo?: string;
     patientLive?: string;

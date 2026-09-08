@@ -251,7 +251,7 @@ export const Accessible2DView: React.FC = () => {
                 </div>
 
                 {proj.links.patientLive && proj.links.doctorLive && (
-                  <div className="flex items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex flex-wrap items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
                     <a
                       href={proj.links.patientLive}
                       target="_blank"
@@ -268,11 +268,33 @@ export const Accessible2DView: React.FC = () => {
                     >
                       Doctor Portal <ArrowUpRight className="w-3 h-3" />
                     </a>
+                    {proj.links.patientGithub && (
+                      <a
+                        href={proj.links.patientGithub}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                        title="Patient Booking GitHub Repository"
+                      >
+                        <Github className="w-3 h-3" /> Patient Repo
+                      </a>
+                    )}
+                    {proj.links.doctorGithub && (
+                      <a
+                        href={proj.links.doctorGithub}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                        title="Doctor Portal GitHub Repository"
+                      >
+                        <Github className="w-3 h-3" /> Doctor Repo
+                      </a>
+                    )}
                   </div>
                 )}
 
                 {proj.links.customerLive && proj.links.adminLive && (
-                  <div className="flex items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex flex-wrap items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
                     <a
                       href={proj.links.customerLive}
                       target="_blank"
@@ -294,6 +316,64 @@ export const Accessible2DView: React.FC = () => {
                     >
                       {proj.id === 'inti-ruchi' ? 'Kitchen Admin' : 'Admin Portal'} <ArrowUpRight className="w-3 h-3" />
                     </a>
+                    {proj.links.customerGithub && proj.links.adminGithub ? (
+                      <>
+                        <a
+                          href={proj.links.customerGithub}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                          title="Customer App GitHub Repository"
+                        >
+                          <Github className="w-3 h-3 text-emerald-400" /> Customer Repo
+                        </a>
+                        <a
+                          href={proj.links.adminGithub}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-teal-500/40 text-slate-300 hover:text-teal-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                          title="Kitchen Admin GitHub Repository"
+                        >
+                          <Github className="w-3 h-3 text-teal-400" /> Admin Repo
+                        </a>
+                      </>
+                    ) : proj.links.github ? (
+                      <a
+                        href={proj.links.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                        title="GitHub Repository"
+                      >
+                        <Github className="w-3 h-3" /> Repo
+                      </a>
+                    ) : null}
+                  </div>
+                )}
+
+                {!proj.links.patientLive && !proj.links.customerLive && (proj.links.demo || proj.links.github) && (
+                  <div className="flex flex-wrap items-center gap-2 mb-3" onClick={(e) => e.stopPropagation()}>
+                    {proj.links.demo && (
+                      <a
+                        href={proj.links.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-2.5 py-1 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-purple-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                      >
+                        Live Demo <ArrowUpRight className="w-3 h-3" />
+                      </a>
+                    )}
+                    {proj.links.github && (
+                      <a
+                        href={proj.links.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-300 text-[10px] font-mono flex items-center gap-1 transition-all"
+                        title="GitHub Repository"
+                      >
+                        <Github className="w-3 h-3" /> Repo
+                      </a>
+                    )}
                   </div>
                 )}
 

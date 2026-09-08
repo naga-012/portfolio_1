@@ -142,7 +142,9 @@ export const portfolioData: PortfolioData = {
       techStack: ['FastAPI', 'PostgreSQL', 'Power BI', 'SQLAlchemy', 'Python', 'React'],
       image: '/projects/health-connect.jpg',
       links: {
-        github: 'https://github.com/naga-012/health-connect-hub',
+        github: 'https://github.com/naga-012/Health_connect_patient_booking',
+        patientGithub: 'https://github.com/naga-012/Health_connect_patient_booking',
+        doctorGithub: 'https://github.com/naga-012/Health_connect_Doctor',
         live: 'https://health-connect-patient-booking.onrender.com',
         patientLive: 'https://health-connect-patient-booking.onrender.com',
         doctorLive: 'https://health-connect-doctor.onrender.com',
@@ -168,7 +170,7 @@ export const portfolioData: PortfolioData = {
       techStack: ['PyTorch', 'TensorFlow', 'OpenCV', 'Grad-CAM', 'Streamlit', 'Python', 'NumPy'],
       image: '/projects/mri-tumor.jpg',
       links: {
-        github: 'https://github.com/naga-012/mri-brain-tumor-detection',
+        github: 'https://github.com/naga-012/MRI_BASED_ON_BRAIN_TUROM',
         demo: 'https://mri-tumor-ai.demo.app',
       },
     },
@@ -192,7 +194,7 @@ export const portfolioData: PortfolioData = {
       techStack: ['React', 'Three.js', 'React Three Fiber', 'Zustand', 'Node.js', 'MongoDB', 'Tailwind CSS'],
       image: '/projects/mensverse-3d.jpg',
       links: {
-        github: 'https://github.com/naga-012/mensverse-3d-store',
+        github: 'https://github.com/naga-012/men-s_store',
         live: 'https://saha-customer-site.onrender.com',
         customerLive: 'https://saha-customer-site.onrender.com',
         adminLive: 'https://saha-admin-site.onrender.com',
@@ -218,7 +220,9 @@ export const portfolioData: PortfolioData = {
       techStack: ['FastAPI', 'React', 'Vite', 'SQLite', 'JWT', 'Python', 'Tailwind CSS'],
       image: '/projects/inti-ruchi.jpg',
       links: {
-        github: 'https://github.com/naga-012/inti-ruchi-food-platform',
+        github: 'https://github.com/naga-012/Home_food_customer',
+        customerGithub: 'https://github.com/naga-012/Home_food_customer',
+        adminGithub: 'https://github.com/naga-012/Home_food_admin',
         live: 'https://inti-ruchi-frontend.onrender.com',
         customerLive: 'https://inti-ruchi-frontend.onrender.com',
         adminLive: 'https://inti-ruchi-admin.onrender.com',
