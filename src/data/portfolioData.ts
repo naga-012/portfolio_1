@@ -229,6 +229,29 @@ export const portfolioData: PortfolioData = {
         adminLive: 'https://inti-ruchi-admin.onrender.com',
       },
     },
+    {
+      id: 'ecommerce-data',
+      title: 'E-Commerce Data Analytics',
+      shortDesc: 'Transactional data intelligence pipeline with 50k+ records, RFM customer segmentation, and interactive Power BI executive reporting.',
+      category: 'Data & Analytics',
+      accentColor: '#F59E0B',
+      featured: true,
+      metrics: [
+        { highlight: '50k+', label: 'Transactions Analyzed' },
+        { highlight: '50+', label: 'Optimized MySQL Queries' },
+      ],
+      problem:
+        'Raw multichannel e-commerce sales lacked unified schema visibility, obscuring customer retention, high-value buyer segments, and multi-regional product profit margins.',
+      approach:
+        'Cleaned, normalized, and explored 50,000+ sales and customer records utilizing Python (Pandas, NumPy). Authored 50+ high-performance MySQL queries with complex JOINs, CTEs, subqueries, and window functions. Conducted RFM (Recency, Frequency, Monetary) analysis to segment buyers into Champions, Loyal, At-Risk, and Lost tiers.',
+      result:
+        'Built an executive Power BI dashboard displaying critical business KPIs (Revenue, Profit, Orders, AOV, Profit Margin, Return Rate) with dynamic slicing across date, region, category, and customer segment for data-driven growth strategies.',
+      techStack: ['Python', 'Pandas', 'NumPy', 'MySQL', 'Power BI', 'DAX', 'RFM Analysis', 'Advanced Excel'],
+      image: '/projects/ecommerce-data.jpg',
+      links: {
+        github: 'https://github.com/naga-012/E-COMMERCE-DATA',
+      },
+    },
   ],
 
   resumes: [

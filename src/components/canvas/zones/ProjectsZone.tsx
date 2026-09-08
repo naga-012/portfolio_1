@@ -8,13 +8,18 @@ import { Sparkles, ArrowLeft, ArrowRight } from 'lucide-react';
 export const ProjectsZone: React.FC = () => {
   const setZone = usePortfolioStore((state) => state.setZone);
 
-  // Curved gallery layout coordinates relative to [16, 0, 0]
-  const cardLayouts: { pos: [number, number, number]; rot: [number, number, number] }[] = [
-    { pos: [-5.4, -0.2, 0.5], rot: [0, 0.2, 0] },
-    { pos: [-1.8, -0.2, 0], rot: [0, 0.06, 0] },
-    { pos: [1.8, -0.2, 0], rot: [0, -0.06, 0] },
-    { pos: [5.4, -0.2, 0.5], rot: [0, -0.2, 0] },
-  ];
+  // Dynamically calculate curved gallery layout for any number of projects
+  const getCardLayout = (index: number, total: number) => {
+    const spacing = 3.6;
+    const startX = -((total - 1) * spacing) / 2;
+    const x = startX + index * spacing;
+    const z = Math.abs(x) * 0.12;
+    const rotY = -x * 0.035;
+    return {
+      pos: [x, -0.2, z] as [number, number, number],
+      rot: [0, rotY, 0] as [number, number, number],
+    };
+  };
 
   return (
     <group position={[16, 0, 0]}>
@@ -36,16 +41,19 @@ export const ProjectsZone: React.FC = () => {
         </Html>
       </Float>
 
-      {/* 4 Interactive 3D Project Cards */}
-      {portfolioData.projects.map((project, index) => (
-        <ProjectCard3D
-          key={project.id}
-          project={project}
-          position={cardLayouts[index].pos}
-          rotation={cardLayouts[index].rot}
-          index={index}
-        />
-      ))}
+      {/* Interactive 3D Project Cards */}
+      {portfolioData.projects.map((project, index) => {
+        const layout = getCardLayout(index, portfolioData.projects.length);
+        return (
+          <ProjectCard3D
+            key={project.id}
+            project={project}
+            position={layout.pos}
+            rotation={layout.rot}
+            index={index}
+          />
+        );
+      })}
 
       {/* Navigation shortcuts floating below */}
       <Html position={[0, -3.2, 0]} center transform distanceFactor={8} className="pointer-events-auto">
