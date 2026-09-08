@@ -31,7 +31,7 @@ export const ProjectsZone: React.FC = () => {
               <Sparkles className="w-3 h-3" />
               <span>PRODUCTION WORK & CAPSTONES</span>
             </div>
-            <h2 className="text-xl font-extrabold text-white tracking-tight drop-shadow-sm">
+            <h2 className="text-base sm:text-lg font-bold text-white tracking-tight drop-shadow-sm">
               Featured 3D Projects & Case Studies
             </h2>
             <p className="text-[11px] text-slate-300 font-mono mt-0.5">
