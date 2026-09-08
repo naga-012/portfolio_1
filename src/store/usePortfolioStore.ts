@@ -20,7 +20,7 @@ export const ZONE_CAMERAS: Record<ZoneId, ZoneCameraConfig> = {
     target: [-14, -10.5, 0],
   },
   projects: {
-    position: [16, 1.2, 11.5],
+    position: [16, 0.4, 9.6],
     target: [16, 0, 0],
   },
   experience: {

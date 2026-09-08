@@ -33,8 +33,8 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
     // Interactive Hover: Fly forward towards camera in Z, elevate in Y, face viewer flat (rotY=0), and scale up!
     const targetX = position[0];
     const targetY = position[1] + floatY + (hovered ? 0.5 : 0);
-    const targetZ = position[2] + (hovered ? 2.8 : 0);
-    const targetScale = hovered ? 1.25 : 1;
+    const targetZ = position[2] + (hovered ? 3.0 : 0);
+    const targetScale = hovered ? 1.32 : 1.1;
     const targetRotY = hovered ? 0 : rotation[1];
 
     meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, targetX, 0.12);
