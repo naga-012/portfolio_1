@@ -24,17 +24,17 @@ export const ProjectsZone: React.FC = () => {
   return (
     <group position={[28, 0, 0]}>
       {/* Section Header floating cleanly above the cards */}
-      <Float speed={1.2} rotationIntensity={0.05} floatIntensity={0.15}>
-        <Html position={[0, 3.5, 0]} center transform distanceFactor={9.8} className="pointer-events-none select-none w-[420px]">
-          <div className="flex flex-col items-center text-center py-2 px-4 backdrop-blur-xl bg-slate-950/90 rounded-xl border border-cyan-500/30 shadow-lg">
-            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-bold text-[9px] font-mono mb-1 shadow-sm">
-              <Sparkles className="w-2.5 h-2.5" />
+      <Float speed={1.2} rotationIntensity={0.04} floatIntensity={0.12}>
+        <Html position={[0, 3.2, 0]} center transform distanceFactor={7.0} className="pointer-events-none select-none w-[320px]">
+          <div className="flex flex-col items-center text-center py-1.5 px-3 backdrop-blur-xl bg-slate-950/90 rounded-lg border border-cyan-500/25 shadow-md">
+            <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 font-bold text-[8px] font-mono mb-0.5 shadow-sm">
+              <Sparkles className="w-2 h-2" />
               <span>PRODUCTION WORK & CAPSTONES</span>
             </div>
-            <h2 className="text-sm sm:text-base font-bold text-white tracking-tight drop-shadow-sm">
+            <h2 className="text-xs sm:text-[13px] font-bold text-white tracking-tight drop-shadow-sm">
               Featured 3D Projects & Case Studies
             </h2>
-            <p className="text-[10px] text-slate-300 font-mono mt-0.5">
+            <p className="text-[8.5px] text-slate-300 font-mono mt-0.5">
               Hover card to enlarge in 3D • Click to open case study
             </p>
           </div>
