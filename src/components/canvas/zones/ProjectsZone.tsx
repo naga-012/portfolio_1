@@ -10,13 +10,13 @@ export const ProjectsZone: React.FC = () => {
 
   // Dynamically calculate curved gallery layout for any number of projects
   const getCardLayout = (index: number, total: number) => {
-    const spacing = 2.7;
+    const spacing = 2.35;
     const startX = -((total - 1) * spacing) / 2;
     const x = startX + index * spacing;
-    const z = Math.abs(x) * 0.14;
-    const rotY = -x * 0.04;
+    const z = Math.abs(x) * 0.12;
+    const rotY = -x * 0.035;
     return {
-      pos: [x, -0.35, z] as [number, number, number],
+      pos: [x, -0.25, z] as [number, number, number],
       rot: [0, rotY, 0] as [number, number, number],
     };
   };
@@ -25,16 +25,16 @@ export const ProjectsZone: React.FC = () => {
     <group position={[28, 0, 0]}>
       {/* Section Header floating cleanly above the cards */}
       <Float speed={1.2} rotationIntensity={0.05} floatIntensity={0.15}>
-        <Html position={[0, 3.8, 0]} center transform distanceFactor={9} className="pointer-events-none select-none w-[480px]">
-          <div className="flex flex-col items-center text-center py-2 px-5 backdrop-blur-xl bg-slate-950/90 rounded-2xl border border-cyan-500/30 shadow-lg">
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-bold text-[10px] font-mono mb-1 shadow-sm">
-              <Sparkles className="w-3 h-3" />
+        <Html position={[0, 3.5, 0]} center transform distanceFactor={9.8} className="pointer-events-none select-none w-[420px]">
+          <div className="flex flex-col items-center text-center py-2 px-4 backdrop-blur-xl bg-slate-950/90 rounded-xl border border-cyan-500/30 shadow-lg">
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-bold text-[9px] font-mono mb-1 shadow-sm">
+              <Sparkles className="w-2.5 h-2.5" />
               <span>PRODUCTION WORK & CAPSTONES</span>
             </div>
-            <h2 className="text-base sm:text-lg font-bold text-white tracking-tight drop-shadow-sm">
+            <h2 className="text-sm sm:text-base font-bold text-white tracking-tight drop-shadow-sm">
               Featured 3D Projects & Case Studies
             </h2>
-            <p className="text-[11px] text-slate-300 font-mono mt-0.5">
+            <p className="text-[10px] text-slate-300 font-mono mt-0.5">
               Hover card to enlarge in 3D • Click to open case study
             </p>
           </div>
@@ -56,19 +56,19 @@ export const ProjectsZone: React.FC = () => {
       })}
 
       {/* Navigation shortcuts floating below */}
-      <Html position={[0, -3.2, 0]} center transform distanceFactor={8} className="pointer-events-auto">
-        <div className="flex items-center gap-4 p-2 rounded-xl bg-slate-950/80 border border-slate-800 backdrop-blur-md">
+      <Html position={[0, -2.8, 0]} center transform distanceFactor={8.8} className="pointer-events-auto">
+        <div className="flex items-center gap-3 p-1.5 rounded-xl bg-slate-950/80 border border-slate-800 backdrop-blur-md">
           <button
             onClick={() => setZone('hero')}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-mono transition-colors"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-[11px] font-mono transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Hero
+            <ArrowLeft className="w-3 h-3" /> Back to Hero
           </button>
           <button
             onClick={() => setZone('about')}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 hover:text-white text-xs font-mono transition-colors"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 hover:text-white text-[11px] font-mono transition-colors"
           >
-            Explore About & Stats <ArrowRight className="w-3.5 h-3.5" />
+            Explore About & Stats <ArrowRight className="w-3 h-3" />
           </button>
         </div>
       </Html>

@@ -29,7 +29,7 @@ export const Accessible2DView: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen text-slate-100 py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-24 transition-opacity duration-500 ${
+      className={`min-h-screen text-slate-100 py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-16 transition-opacity duration-500 ${
         is3DMode ? 'sr-only' : 'relative z-10'
       }`}
       aria-label="Accessible Portfolio Overview"
