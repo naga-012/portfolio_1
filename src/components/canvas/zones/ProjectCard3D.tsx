@@ -157,13 +157,13 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({
 
             {/* Title */}
             <h3
-              className="text-xs font-bold text-white mb-0.5 leading-snug tracking-tight group-hover:text-cyan-300 transition-colors drop-shadow-sm line-clamp-1"
+              className="text-xs font-bold text-white mb-0.5 leading-snug tracking-tight group-hover:text-cyan-300 transition-colors drop-shadow-sm line-clamp-2 min-h-[2rem] flex items-center"
               title={project.title}
             >
               {project.title}
             </h3>
             {/* Description */}
-            <p className="text-[10px] text-slate-200 font-medium line-clamp-2 leading-relaxed mb-1.5">
+            <p className="text-[9.5px] text-slate-200 font-medium line-clamp-2 leading-relaxed mb-1.5">
               {project.shortDesc}
             </p>
 
